@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 04 c</title>
+    <script>
+        function calcBill(price, quantity) {
+            document.getElementById("result").innerHTML = "Total price: " + (price * quantity);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p>Price: </p>
+        <input type="number" placeholder="Price..." id="price">
+        <p>Quantity:</p>
+        <input type="number" placeholder="Quantity..." id="quantity">
+        <button onclick="calcBill(parseInt(price.value), parseInt(quantity.value))">Calc Bill</button>
+    </div>
+    <p id="result"></p>
+</body>
+</html>
