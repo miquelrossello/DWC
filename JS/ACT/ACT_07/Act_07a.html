@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 07 a</title>
+    <script>
+        function getBiggest(n1, n2, n3) {
+            n1 = parseInt(n1);
+            n2 = parseInt(n2);
+            n3 = parseInt(n3);
+            var biggest;
+            if (n1 > n2 && n1 > n3) {
+                biggest = n1;
+            } else if (n2 > n1 && n2 > n3) {
+                biggest = n2;
+            } else if (n3 > n1 && n3 > n2) {
+                biggest = n3;
+            }
+
+            document.getElementById("biggest").innerHTML = "Biggest is: " + biggest;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Number 1" id="n1">
+    <input type="number" placeholder="Number 2" id="n2">
+    <input type="number" placeholder="Number 3" id="n3">
+    <button onclick="getBiggest(n1.value, n2.value, n3.value)">Take biggest!</button>
+    <h3 id="biggest"></h3>
+</body>
+</html>

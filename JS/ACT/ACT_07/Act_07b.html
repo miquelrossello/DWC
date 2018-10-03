@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 07 b</title>
+    <script>
+        function getSmallest(n1, n2 , n3) {
+            var smallest;
+            if (n1 < n2 && n1 < n3) {
+                smallest = n1;
+            } else if (n2 < n1 && n2 < n3) {
+                smallest = n2;
+            } else if (n3 < n1 && n3 < n2) {
+                smallest = n3;
+            }
+            document.getElementById("result").innerHTML = "The smallest is " + smallest;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Number 1" id="n1">
+    <input type="number" placeholder="Number 2" id="n2">
+    <input type="number" placeholder="Number 3" id="n3">
+    <button onclick="getSmallest(parseInt(n1.value), parseInt(n2.value), parseInt(n3.value))">Get Smallest!</button>
+    <h1 id="result"></h1>
+</body>
+</html>

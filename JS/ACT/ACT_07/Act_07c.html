@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 07 c</title>
+    <script>
+        function getDigits(num) {
+            var areDigits = false;
+            for (var i = 0; i < num.length; i++) {
+                if (typeof(parseInt(num.charAt(i))) != "number") {
+                    areDigits = false;
+                    break;
+                } else {
+                    areDigits = true;
+                }
+            }
+            if (areDigits) {
+                document.getElementById("result").innerHTML = (num.length);
+            } else {
+                document.getElementById("result").innerHTML = "Aren't digits!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="number" min="0" max="999" placeholder="Number between 0 and 999..." id="number">
+    <button onclick="getDigits(number.value)">Get nº digits</button>
+    <h1 id="result"></h1>
+</body>
+</html>
