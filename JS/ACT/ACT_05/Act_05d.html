@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 05 d</title>
+    <script> 
+        function isPair(number) {
+            if (number % 2 == 0) {
+                document.getElementById("result").innerHTML = "The number is pair!";
+            } else {
+                document.getElementById("result").innerHTML = "The number isn't pair!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Insert a number..." id="number">
+    <button onclick="isPair(number.value)">Check it!</button>
+    <h4 id="result"></h4>
+</body>
+</html>

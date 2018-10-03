@@ -7,6 +7,18 @@
     <title>Act 05b</title>
 </head>
 <body>
-    
+    <input id="e1" type="email" placeholder="Email">
+    <input id="e2" type="email" placeholder="Verify email">
+    <button onclick="verify()">Verify</button>
+    <p id="res"></p>
+    <script>
+        function verify() {
+            if (document.getElementById("e1").value == document.getElementById("e2").value) {
+                document.getElementById("res").innerHTML = "Email are equal!";
+            } else {
+                document.getElementById("res").innerHTML = "Email are not equal!";
+            }
+        }
+    </script>
 </body>
 </html>
