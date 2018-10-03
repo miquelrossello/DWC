@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 06 b</title>
+    <script>
+        function getAVG(m1, m2, m3) {
+            m1 = parseInt(m1);
+            m2 = parseInt(m2);
+            m3 = parseInt(m3);
+            avg = (m1 + m2 + m3) / 3;
+            console.log(avg);
+            if (avg >= 5) {
+                document.getElementById("result").innerHTML = "You pass!";
+            } else {
+                document.getElementById("result").innerHTML = "You don't pass!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Mark 1..." id="m1">
+    <input type="number" placeholder="Mark 2..." id="m2">
+    <input type="number" placeholder="Mark 3..." id="m3">
+    <button onclick="getAVG(m1.value, m2.value, m3.value)">Evaluate!</button>
+    <h1 id="result"></h1>
+</body>
+</html>

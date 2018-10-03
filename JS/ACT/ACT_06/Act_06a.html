@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 06 a</title>
+    <script>
+        function twoNumbers(n1, n2) {
+            n1 = parseInt(n1);
+            n2 = parseInt(n2);
+            if (n1 > n2) {
+                document.getElementById("result").innerHTML = "Result is: " + (n1 + n2);
+            } else {
+                document.getElementById("result").innerHTML = "Result is: " + (n2 - n1);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Number 1..." id="n1">
+    <input type="number" placeholder="Number 2..." id="n2">
+    <button onclick="twoNumbers(n1.value, n2.value)">Check it!</button>
+    <h4 id="result"></h4>
+</body>
+</html>

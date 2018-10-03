@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 06 d</title>
+    <script>
+        function showAgeInfo(age) {
+            if (age >= 18 && age <= 65) {
+                document.getElementById("info").innerHTML = "You are on worker age!";
+            } else {
+                document.getElementById("info").innerHTML = "Your are not on worker age!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Your age is..." id="age">
+    <button onclick="showAgeInfo(age.value)">Show!</button>
+    <h4 id="info"></h4>
+</body>
+</html>
