@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 09 a</title>
+    <script>
+        function translate(text) {
+            var lang = document.getElementById("lang").value;
+            var translated;
+            switch (lang) {
+                case "Spanish":
+                    if (text == "dog") {
+                        translated = "Perro";
+                    } else if (text == "cat") {
+                        translated = "Gato";
+                    }
+                    break;
+                case "Catalan":
+                    if (text == "dog") {
+                        translated = "Ca";
+                    } else if (text == "cat") {
+                        translated = "Moix";
+                    }
+                    break;
+            }
+            document.getElementById("result").innerHTML = translated;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="To translate ('dog' or 'cat')..." id="text">
+    <select id="lang">
+        <option value="Spanish">Spanish</option>
+        <option value="Catalan">Catalan</option>
+    </select>
+    <button onclick="translate(text.value)">Translate</button>
+    <h1 id="result"></h1>
+</body>
+</html>

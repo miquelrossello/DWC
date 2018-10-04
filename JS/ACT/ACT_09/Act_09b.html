@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 09 b</title>
+    <script>
+        function getMonthByNumber(number) {
+            var month_name;
+            switch(number) {
+                case 1:
+                    month_name = "Gener";
+                    break;
+                case 2:
+                    month_name = "Febrer";
+                    break;
+                case 3:
+                    month_name = "Març";
+                    break;
+                case 4:
+                    month_name = "Abril";
+                    break;
+                case 5:
+                    month_name = "Maig";
+                    break;
+                case 6:
+                    month_name = "Juny";
+                    break;
+                case 7:
+                    month_name = "Juliol";
+                    break;
+                case 8:
+                    month_name = "Agost";
+                    break;
+                case 9:
+                    month_name = "Setembre";
+                    break;
+                case 10:
+                    month_name = "Octubre";
+                    break;
+                case 11:
+                    month_name = "Novembre";
+                    break;
+                case 12:
+                    month_name = "Desembre";
+                    break;    
+            }
+            document.getElementById("month_name").innerHTML = month_name;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Enter number to get Month name..." id="num_month">
+    <button onclick="getMonthByNumber(parseInt(num_month.value))">Get Month Name</button>
+    <h1 id="month_name"></h1>
+</body>
+</html>
