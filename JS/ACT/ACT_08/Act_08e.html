@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 08 e</title>
+    <script>
+        function check(n1, n2, n3) {
+            if (n1 < 10 || n2 < 10 || n3 < 10) {
+                document.getElementById("result").innerHTML = "One is less than 10!";
+            } else {
+                document.getElementById("result").innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Insert number..." id="n1">
+    <input type="number" placeholder="Insert number..." id="n2">
+    <input type="number" placeholder="Insert number..." id="n3">
+    <button onclick="check(parseInt(n1.value), parseInt(n2.value), parseInt(n3.value))">Check</button>
+    <h2 id="result"></h2>
+</body>
+</html>

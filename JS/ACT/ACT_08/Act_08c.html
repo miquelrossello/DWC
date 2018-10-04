@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 08 d</title>
+    <script>
+        function getSquare(pos1, pos2) {
+            var square;
+            if (pos1 == 0 && pos2 == 0) {
+                square = "First square!";
+            } else if (pos1 == 1 && pos2 == 0) {
+                square = "Second square!";
+            }
+            document.getElementById("square").innerHTML = square;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Position 1..." id="pos1">
+    <input type="number" placeholder="Position 2..." id="pos2">
+    <button onclick="getSquare(parseInt(pos1.value), parseInt(pos2.value))">Get Square</button>
+    <h2 id="square"></h2>
+</body>
+</html>

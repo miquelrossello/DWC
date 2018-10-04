@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 08 d</title>
+    <script>
+        function calcSalary(years, salary) {
+            var final_salary;
+            if (salary < 500 && years >= 10) {
+                final_salary = salary * 1.20;
+            } else if (salary < 500 && years < 10) {
+                final_salary = salary * 1.05;
+            } else if (salary >= 500) {
+                final_salary = salary;
+            }
+            document.getElementById("f_s").innerHTML = "Your next salary: " + final_salary;
+        }
+    </script>
+</head>
+<body>
+    <h1>Salary</h1>
+    <input type="number" placeholder="Salary..." id="salary">
+    <input type="number" placeholder="Years on company..." id="years">
+    <button onclick="calcSalary(parseInt(years.value), parseInt(salary.value))">Calc next year</button>
+    <h3 id="f_s"></h3>
+</body>
+</html>

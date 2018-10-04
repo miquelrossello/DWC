@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 08 a</title>
+    <script>
+            function printDateInfo(date) {
+                var day_ = date.substr((date.length - 2), 2);
+                var month_ = date.substr(5, 2);
+                if (day_ == "25" && month_ == "12") {
+                    document.getElementById("out").innerHTML = "It's Christmas!"
+                }
+            }
+    </script>
+</head>
+<body>
+    <input onchange="printDateInfo(date.value)" type="date" placeholder="Enter a date..." id="date">
+    <h1 id="out"></h1>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 08b</title>
+    <script>
+        function checkIt(n1, n2, n3) {
+            if (n1 < 10 && n2 < 10 && n3 < 10) {
+                document.getElementById("result").innerHTML = "Numbers are less than 10!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Number 1" id="n1">
+    <input type="number" placeholder="Number 2" id="n2">
+    <input type="number" placeholder="Number 3" id="n3">
+    <button onclick="checkIt(parseInt(n1.value), parseInt(n2.value), parseInt(n3.value))">Check</button>
+    <h1 id="result"></h1>
+</body>
+</html>
