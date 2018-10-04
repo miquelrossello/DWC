@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 10 h</title>
+</head>
+<body>
+    <script>
+        function getSumOfArray(array) {
+            var sum = 0;
+            for (var i = 0; i < array.length; i++) {
+                sum += array[i];
+            }
+            return sum;
+        }
+
+        var list_1 = [1, 10, 20];
+        var list_2 = [200, 5, 3];
+        
+        if (getSumOfArray(list_1) > getSumOfArray(list_2)) {
+            document.write("List 1 have a biggest sum!");
+        } else {
+            document.write("List 2 have a biggest sum!");
+        }
+        
+        
+    </script>
+</body>
+</html>

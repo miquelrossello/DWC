@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 10 e</title>
+</head>
+<body>
+    <script>
+        var marks = new Array(10);
+        for (var i = 0; i < marks.length; i++) {
+            console.log(i);
+            marks[i] = prompt("Insert mark num. " + (i + 1));
+        }
+        var approved = 0;
+        var failed = 0;
+        for (var m = 0; m < 10; m++) {
+            if (marks[m] >= 5) {
+                approved++;
+            } else {
+                failed++;
+            }
+        }
+        document.write("Approved: " + approved + " | Failed: " + failed);
+    </script>
+</body>
+</html>

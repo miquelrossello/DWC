@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 10 g</title>
+</head>
+<body>
+    <script>
+        var salaries = [500, 800, 1500, 1000, 1200];
+        var btw_500_100 = 0;
+        var more_1000 = 0;
+        for (var i = 0; i < salaries.length; i++) {
+            if (salaries[i] >= 500 && salaries[i] < 1000) {
+                btw_500_100++;
+            } else if (salaries[i] >= 1000) {
+                more_1000++;
+            }
+        }
+    </script>
+</body>
+</html>
