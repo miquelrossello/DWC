@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array Modifier</title>
+    <script>
+        var array_list = new Array();
+
+        function getArray() {
+            var list = document.getElementById("list").children;
+            for (var i = 0; i < list.length; i++) {
+                array_list[i] = list[i].textContent;
+            }
+            console.log(array_list);
+        }
+
+        function setArray() {
+            for (var i = 0; i < array_list.length; i++) {
+                var ul = document.getElementById("list");
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(array_list[i]));
+                ul.appendChild(li);
+            }
+        }
+
+        function shift() {
+            getArray();
+            console.log(array_list);
+            array_list.shift();
+            console.log(array_list);
+            setArray();
+        }
+
+        function push() {
+
+        }
+
+        function unShift() {
+
+        }
+
+        function pop() {
+
+        }
+
+        function sort() {
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <ul id="list">
+            <li class="item">Miquel</li>
+        </ul>
+    </div>
+    <div>
+        <input type="text" placeholder="Text to insert..." id="input_txt">
+        <br>
+        <div>
+            <button onclick="shift()">Shift</button>
+            <button onclick="push()">Push</button>
+            <button onclick="unShift()">Unshift</button>
+            <button onclick="pop()">Pop</button>
+            <button onclick="sort()">Sort</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 12 e</title>
+    <script>
+        function getType(side_1, side_2, side_3) {
+            var type;
+            if (side_1 == side_2 && side_1 == side_3) {
+                type = "Equilateral";
+            } else if (side_1 == side_2 && side_1 != side_3 || side_1 != side_2 && side_1 == side_3 || side_2 == side_3 && side_1 != side_2) {
+                type = "Isosceles";
+            } else {
+                type = "Scalene";
+            }
+            document.getElementById("type").innerHTML = type;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Side 1" id="s_1">
+    <input type="number" placeholder="Side 2" id="s_2">
+    <input type="number" placeholder="Side 3" id="s_3">
+    <button onclick="getType(parseInt(s_1.value), parseInt(s_2.value), parseInt(s_3.value))">Get Type</button>
+    <p id="type"></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 12 a</title>
+    <script>
+        function getArea(base, height) {
+            return (base * height) / 2;
+        }
+
+        function calcAll() {
+            for (var i = 1; i <= 3; i++) {
+                var base = parseInt(document.getElementById("base_" + i).value);
+                var height = parseInt(document.getElementById("height_" + i).value);
+                document.getElementById("result_" + i).innerHTML = getArea(base, height);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Trainge 1</h1>
+    <input type="number" placeholder="Base..." id="base_1" class="traingle_1">
+    <input type="number" placeholder="Height..." id="height_1" class="traingle_1">
+    <p id="result_1"></p>
+    <h2>Triangle 2</h2>
+    <input type="number" placeholder="Base..." id="base_2" class="traingle_2">
+    <input type="number" placeholder="Height..." id="height_2" class="traingle_2">
+    <p id="result_2"></p>
+    <h3>Triangle 3</h3>
+    <input type="number" placeholder="Base..." id="base_3" class="traingle_3">
+    <input type="number" placeholder="Height..." id="height_3" class="traingle_3">
+    <p id="result_3"></p>
+    <br>
+    <button onclick="calcAll()">Calc</button>
+</body>
+</html>
