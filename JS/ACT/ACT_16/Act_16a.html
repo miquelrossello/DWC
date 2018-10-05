@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 16 a</title>
+</head>
+<body>
+    <script>
+        var vectors = [1, 8, 7, 9, 10, 23, 55, 12];
+
+        var total_sum = 0;
+        var sum_h_5 = 0;
+        var total_h_5 = 0;
+
+        for (vector in vectors) {
+            total_sum += vectors[vector];
+            if (vectors[vector] > 5) {
+                sum_h_5 += vectors[vector];
+                total_h_5++;
+            }
+        }
+        var avg = total_sum / vectors.length;
+
+        document.write("Total average: " + avg + "<br> Sum higher than 5: " + sum_h_5 + " <br> Quantity higher than 5: " + total_h_5 + "<br> Total sum: " + total_sum);
+    </script>
+</body>
+</html>

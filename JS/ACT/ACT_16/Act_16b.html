@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 16 b</title>
+</head>
+<body>
+    <script>
+        function createVector(n) {
+            return new Array(n);
+        }
+
+        function insertToVector(n1, n2) {
+            var vector = createVector(5);
+            console.log(vector);
+            if (vector.length > 2) {
+                vector[1] = n1;
+                vector[2] = n2;
+            } else {
+                document.write("Can't pace 2 numbers. Vector is too small!");
+            }
+            return vector;
+        }
+
+        function totalSumOfVector(vector) {
+            var sum = 0;
+            for (num in vector) {
+                sum += vector[num];
+            }
+            return sum;
+        }
+
+        var vector = insertToVector(1, 10);
+        document.write(totalSumOfVector(vector));
+    </script>
+</body>
+</html>
