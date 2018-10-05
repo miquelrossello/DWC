@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 13 d</title>
+    <script>
+        function getLengthNum(num) {
+            document.getElementById("result").innerHTML = (num.toString()).length;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Number..." id="num">
+    <button onclick="getLengthNum(parseInt(num.value))">Get length</button>
+    <p id="result"></p>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 13 a</title>
+</head>
+<body>
+    <script>
+        function lowest(n1, n2, n3) {
+            var lowest;
+            if (n1 < n2 && n1 < n3) {
+                lowest = n1;
+            } else if (n2 < n1 && n2 < n3) {
+                lowest = n2;
+            } else {
+                lowest = n3;
+            }
+            return lowest;
+        }
+
+        document.write(lowest(1, 5, 8));
+    </script>
+</body>
+</html>

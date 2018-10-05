@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 13 c</title>
+    <script>
+        function getPerimeterOfSquare(side) {
+            document.getElementById("perimeter").innerHTML = side * 4;
+        }
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="Insert side of square..." id="side">
+    <button onclick="getPerimeterOfSquare(parseInt(side.value))">Perimeter</button>
+    <p id="perimeter"></p>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 13 b</title>
+</head>
+<body>
+    <script>
+        function sortAsc(n1, n2, n3) {
+            var nums = [n1, n2, n3];
+            for (num in nums) {
+                for (var compare = num; compare < nums.length; compare++) {
+                    if (num < nums[compare]) {
+                        var temp = nums[compare];
+                        nums[compare] = nums[num];
+                        nums[num] = temp;
+                    }
+                }
+            }
+            return nums;
+        }
+
+        document.write(sortAsc(5, 4, 2));
+    </script>
+</body>
+</html>
