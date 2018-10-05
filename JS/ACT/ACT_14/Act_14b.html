@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 14 b</title>
+    <script>
+        class Worker {
+
+            constructor (name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        class Company {
+            
+            constructor (name, top_age_workers) {
+                this.name = name;
+                this.top_age_workers = top_age_workers;
+            }
+
+            can_work(age) {
+                return (age < this.top_age_workers);
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var w1 = new Worker("Miquel", 20);
+        var w2 = new Worker("Toni", 40);
+
+        var company = new Company("Apple", 35);
+
+        //W1
+        document.write(w1.name + " Can work on " + company.name + ": " + company.can_work(w1.age));
+
+        document.write("<br>");
+
+        //W2
+        document.write(w2.name + " Can work on " + company.name + ": " + company.can_work(w2.age));
+    </script>
+</body>
+</html>
