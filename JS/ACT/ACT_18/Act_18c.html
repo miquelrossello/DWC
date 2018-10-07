@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 18 c</title>
+</head>
+<body>
+    <script>
+        var input = prompt("Enter a text or word...");
+        var array = new Array();
+
+
+        for (var i = input.length - 1; i >= 0; i--) {
+            array.push(input.charAt(i));
+        }
+        var inverted_input = "";
+        for (var i = 0; i < array.length; i++) {
+            inverted_input += array[i];
+        }
+        if (inverted_input === input) {
+            document.write("It's a palindrom!");
+        } else {
+            document.write("It isn't a palindrom!");
+        }
+    </script>
+</body>
+</html>

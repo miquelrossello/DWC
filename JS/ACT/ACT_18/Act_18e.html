@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 18 e</title>
+    <script>
+        function reversed(word) {
+            var array = new Array();
+
+            for (var i = word.length - 1; i >= 0; i--) {
+                array.push(word.charAt(i));
+            }
+            var inverted_input = "";
+            for (var i = 0; i < array.length; i++) {
+                inverted_input += array[i];
+            }
+            return inverted_input;
+        }
+
+        function spaced_letters(word) {
+            var spaced = "";
+            for (var i = 0; i < word.length; i++) {
+                spaced += word.charAt(i) + " ";
+            }
+            return spaced;
+        }
+
+        function get_num_vowels(word) {
+            var num_vowels = 0;
+            for (var i = 0; i < word.length; i++) {
+                if (is_vowel(word.charAt(i))) {
+                    console.log(num_vowels);
+                    num_vowels++;
+                }
+            }
+        }
+
+        function is_vowel(letter) {
+            letter = letter.toLowerCase();
+            if (letter.length > 1) {
+                return false;
+            } else {
+                switch (letter) {
+                    case "a":
+                    case "e":
+                    case "i":
+                    case "o":
+                    case "u":
+                        return true;  
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var word = prompt("Word: ");
+
+
+
+        document.write(word.substring(0, (word.length / 2)) + "<br>");
+        document.write(word.charAt(word.length - 1) + "<br>");
+        document.write(reversed(word) + "<br>");
+        document.write(spaced_letters(word) + "<br>");
+        document.write(get_num_vowels(word) + "<br>"); 
+    </script>
+</body>
+</html>

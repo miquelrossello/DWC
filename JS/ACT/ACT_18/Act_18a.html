@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 18 a</title>
+    <script>
+        function commandPrompt() {
+
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var words = new Array();
+        while (true) {
+            var word = prompt("Enter a word...");
+            if (word == "end" || word == "END") {
+                break;
+            } else {
+                words.push(word);
+            }
+        }
+        for (word in words) {
+            document.write(words[word] + "<br>");
+        }
+    </script>
+</body>
+</html>

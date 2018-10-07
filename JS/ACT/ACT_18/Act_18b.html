@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act 18 b</title>
+</head>
+<body>
+    <script>
+        function input_text() {
+            return prompt("Introduce a text...");
+        }
+
+        function input_word() {
+            return prompt("Introduce a word to search...");
+        }
+
+        var txt = input_text();
+        var word = input_word();
+
+        var result = txt.search(word);
+        if (result == -1) {
+            document.write("Word doesn't found!");
+        } else {
+            document.write("Position: " + result);
+        }
+    </script>
+</body>
+</html>
