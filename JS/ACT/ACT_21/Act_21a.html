@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Act 21 a</title>
+  <script type="text/javascript">
+    function checkPass(pass, rep_pass) {
+      return (pass !== rep_pass) ? false : true;
+    }
+
+    function showInfoPass(pass_correct) {
+      var result = "";
+      if (!pass_correct) {
+        result = "Passwords not equal!";
+      } else {
+        result = "";
+      }
+      document.getElementById("pass_result").innerHTML = result;
+    }
+  </script>
+</head>
+<body>
+  <input type="password" placeholder="Enter password..." id="pass">
+  <input type="password" placeholder="Repeat password..." id="rep_pass">
+  <p id="pass_result"></p>
+  <button onclick="showInfoPass(checkPass(pass.value, rep_pass.value))">Check</button>
+</body>
+</html>
