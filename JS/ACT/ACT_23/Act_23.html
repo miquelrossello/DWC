@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Act 23</title>
+  <script type="text/javascript">
+    function showSelected() {
+      var selected = new Array();
+      var cBoxes = document.getElementsByClassName("cbox");
+      var l = cBoxes.length;
+      for (var i = 0; i < l; i++) {
+        if (cBoxes[i].checked) {
+          selected.push(cBoxes[i].value);
+        }
+      }
+      alert(selected.toString());
+    }
+  </script>
+</head>
+<body>
+  <div id="box_checkbox">
+    <input type="checkbox" id="c1" class="cbox" value="Tennis">Tennis
+    <input type="checkbox" id="c2" class="cbox" value="Football">Football
+    <input type="checkbox" id="c3" class="cbox" value="Basketball">Basketball
+  </div>
+  <button type="button" onclick="showSelected()">Show</button>
+</body>
+</html>
