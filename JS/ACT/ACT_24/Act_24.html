@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Act 24</title>
+  <script type="text/javascript">
+    function showSelected(name_elements) {
+      var radios = document.getElementsByName(name_elements);
+      for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+          alert(radios[i].value);
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <form id="radio_form">
+    <input type="radio" name="age" value="-18"> -18<br>
+    <input type="radio" name="age" value="+18"> + 18<br>
+    <button type="button" onclick="showSelected('age')">Join</button>
+  </form>
+</body>
+</html>
