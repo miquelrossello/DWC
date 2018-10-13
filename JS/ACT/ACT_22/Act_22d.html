@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Act 22 d</title>
+  <script type="text/javascript">
+    function validate() {
+      var options = document.getElementsByClassName("answer");
+      var answers = new Array();
+      var result = 0;
+      for (var i = 0; i < options.length; i++) {
+        answers[i] = options[i].value;
+        if (answers[i] != 0) {
+          result++;
+        }
+      }
+      alert("You passed " + result + " of 4");
+    }
+  </script>
+</head>
+<body>
+  <h4>Question 1:</h4>
+  <br>
+  <select id="q1" class="answer">
+    <option selected>Select answer...</option>
+    <option value="0">Answer 1</option>
+    <option value="1">Answer 2</option>
+    <option value="0">Answer 3</option>
+    <option value="0">Answer 4</option>
+  </select>
+  <h4>Question 2:</h4>
+  <br>
+  <select id="q2" class="answer">
+    <option selected>Select answer...</option>
+    <option value="1">Answer 1</option>
+    <option value="0">Answer 2</option>
+    <option value="0">Answer 3</option>
+    <option value="0">Answer 4</option>
+  </select>
+  <h4>Question 3:</h4>
+  <br>
+  <select id="q3" class="answer">
+    <option selected>Select answer...</option>
+    <option value="0">Answer 1</option>
+    <option value="0">Answer 2</option>
+    <option value="0">Answer 3</option>
+    <option value="1">Answer 4</option>
+  </select>
+  <h4>Question 4:</h4>
+  <br>
+  <select id="q4" class="answer">
+    <option selected>Select answer...</option>
+    <option value="0">Answer 1</option>
+    <option value="0">Answer 2</option>
+    <option value="1">Answer 3</option>
+    <option value="0">Answer 4</option>
+  </select>
+  <br>
+  <button type="button" onclick="validate()">Validate</button>
+</body>
+</html>

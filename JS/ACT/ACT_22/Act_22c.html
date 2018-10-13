@@ -1,0 +1,27 @@
+<!-- c) Select from different kinf of pizzas (Pepperoni 6€, Quatro Formaggi 5€, Procciuto 4€,...) using a SELECT element and enter how many pizzas we want in a TEXT element.
+When we press the button Calculate the final cost is shown in another TEXT element. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script type="text/javascript">
+    function calc(pizza, num_pizzas) {
+      document.getElementById("price").innerHTML = (pizza * num_pizzas);
+    }
+  </script>
+</head>
+<body>
+  <select name="pizza" id="pizza">
+    <option value="6">Pepperoni (6€)</option>
+    <option value="5">Quatro Formaggi (5€)</option>
+    <option value="4">Procciuto (4€)</option>
+  </select>
+  <input type="number" placeholder="Number of pizzas..." id="num_pizzas">
+  <br>
+  <button onclick="calc(parseInt(num_pizzas.value), parseInt(pizza[pizza.selectedIndex].value))">Calc</button>
+  <h3 id="price"></h3>
+</body>
+</html>

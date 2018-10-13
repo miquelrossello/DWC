@@ -1,0 +1,49 @@
+<!--
+b) Generate a cost estimation for a computer using 3 different SELECT elements which allow us to select :
+
+
+Processor (Intel I3 - $400, Intel I5 $600, Intel I7 $800).
+Monitor (Samsung 20' - $250, Samsung 22' - $350, Samsung 26' - $550)
+Hard Disk (500 Gb - $300, 1 Tb - $440, 3 Tb - $500)
+
+When we press the button Calculate the final cost is shown in a TEXT element.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Act 22 b</title>
+  <script type="text/javascript">
+    function calc(item1, item2, item3) {
+      document.getElementById("price").innerHTML = (item1 + item2 + item3);
+    }
+  </script>
+</head>
+<body>
+  <label for="cpu">CPU</label>
+  <select id="cpu">
+    <option value="400" >Intel i3 - 400$</option>
+    <option value="600">Intel i5 - 600$</option>
+    <option value="800">Intel i7 - 800$</option>
+  </select>
+  <br>
+  <label for="monitor">Monitor</label>
+  <select id="monitor">
+    <option value="250">Samsung 20 - 250$</option>
+    <option value="350">Samsung 22 - 350$</option>
+    <option value="550">Samsung 26 - 550$</option>
+  </select>
+  <br>
+  <label for="hdd">Hard Disk</label>
+  <select id="hdd">
+    <option value="300">Hard Disk 500G - 300$</option>
+    <option value="440">Hard Disk 1TB- 440$</option>
+    <option value="500">Hard Disk 3TB - 500$</option>
+  </select>
+  <br>
+  <button onclick="calc(parseInt(cpu[cpu.selectedIndex].value), parseInt(monitor[monitor.selectedIndex].value), parseInt(hdd[hdd.selectedIndex].value))">Calc price</button>
+  <h3 id="price"></h3>
+</body>
+</html>
