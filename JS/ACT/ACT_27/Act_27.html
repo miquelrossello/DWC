@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Act 27</title>
+  <script type="text/javascript">
+    function paintIt(table_row) {
+      table_row.style.backgroundColor = "red";
+    }
+
+    function unPaintIt(table_row) {
+      table_row.style.backgroundColor = "white";
+    }
+  </script>
+</head>
+<body>
+  <table>
+    <tr onmouseover="paintIt(this)" onmouseout="unPaintIt(this)">
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr onmouseover="paintIt(this)" onmouseout="unPaintIt(this)">
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+  </table>
+</body>
+</html>
