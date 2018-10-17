@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Act 30 a</title>
+  <script type="text/javascript">
+    function openRandomWebsite() {
+      var random = Math.round(Math.random() * 3);
+      console.log(random);
+      var w;
+      switch (random) {
+        case 0:
+          w = window.open("https://www.google.com");
+          break;
+        case 1:
+          w = window.open("https://www.yahoo.com");
+          break;
+        case 2:
+          w = window.open("https://www.bing.com");
+        default:
+      }
+    }
+  </script>
+</head>
+<body>
+  <a href="#" onclick="openRandomWebsite()">Get a random website!</a>
+</body>
+</html>
