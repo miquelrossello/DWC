@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Activitat Classe 01</title>
+  <script src="lib/jquery-3.3.1.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#hide_p1").click(function () {
+        $("#p1").hide(1000);
+      });
+      $("#hide_p2").click(function () {
+        $("#p2").slideDown(2000);
+      });
+      $("#hide_p3").click(function () {
+        $("#p3").hide(500);
+      });
+      $("#show_all").click(function () {
+        $("#p1").fadeIn("<slow></slow>");
+        $("#p2").show();
+        $("#p3").show();
+      });
+    });
+  </script>
+  <style media="screen">
+    #p2 {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <p id="p1">Paragraph 1</p>
+  <p id="p2">Paragraph 2</p>
+  <p id="p3">Paragraph 3</p>
+  <br>
+  <button type="button" id="hide_p1">Hide P1</button>
+  <button type="button" id="hide_p2">Hide P2</button>
+  <button type="button" id="hide_p3">Hide P3</button>
+  <button type="button" id="show_all">Show all</button>
+</body>
+</html>
