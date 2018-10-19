@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../lib/jquery-3.3.1.js"></script>
+    <title>Activitat 09</title>
+    <script>
+        $(document).ready(function () {
+            $("#head_btn").click(function () {
+                alert($("head").html());
+            });
+            $("#body_btn").click(function () {
+                alert($("body").html());
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>This is the body section</p>
+    <button id="head_btn">Show HEAD content</button>
+    <br>
+    <button id="body_btn">Show BODY content</button>
+</body>
+</html>
