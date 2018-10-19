@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="lib/jquery-3.3.1.js"></script>
+    <title>Activitat Classe 02 </title>
+    <script>
+        $(document).ready(function () {
+            $("#show_btn").click(function () {
+                $("#container *").css({"background-color" : "white"});
+                var element = $("#element :selected").val();
+                var select = $("#select :selected").val();
+                console.log(element);
+                console.log(select);
+                switch (select) {
+                    case "parent":
+                        $("#" + element).parent().css({"background-color" : "red"});
+                        break;
+                    case "parents":
+                        $("#" + element).parents().css({"background-color" : "red"});
+                        break;
+                    case "children":
+                        $("#" + element).children().css({"background-color" : "red"});
+                        break;
+                    case "this":
+                        $("#" + element).css({"background-color" : "red"});
+                        break;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="div1" style="border: 1px solid black;">
+            <p id="p1">Hola que tal com estas</p>
+            <p id="p2">Hola que tal com estas</p>
+            <p id="p3">Hola que tal com estas</p>
+            <div id="div2" style="border: 1px solid black;">
+                <p id="div_p1">Hola que tal com estas</p>
+                <p id="div_p2">Hola que tal com estas</p>
+            </div>
+            <p id="p4">Hola que tal com estas</p>
+        </div>
+    </div>
+     <br>
+        <select name="" id="element">
+            <option value="div1">Div 1</option>
+            <option value="p1">Div 1 > P1</option>
+            <option value="p2">Div 1 > P2</option>
+            <option value="p3">Div 1 > P3</option>
+            <option value="div2">Div 2</option>
+            <option value="div_p1">Div 2 > P1</option>
+            <option value="div_p2">Div 2 > P2</option>
+            <option value="p4">Div 1 > P4</option>
+        </select>
+        <select name="" id="select">
+            <option value="this">This</option>
+            <option value="parent">Parent</option>
+            <option value="parents">Parents</option>
+            <option value="children">Childrens</option>
+        </select>
+    <button id="show_btn">Show</button>
+</body>
+</html>

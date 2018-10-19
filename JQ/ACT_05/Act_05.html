@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../lib/jquery-3.3.1.js"></script>
+    <title>Activitat 05</title>
+    <script>
+        $(document).ready(function () {
+            $("#fontSize_btn").click(function () {
+                var fontSize = $("#font_size :selected").val();
+                $(".p").css({"font-size" : (fontSize + "px")});
+            });
+        });
+    </script>
+</head>
+<body>
+<h1 class="header">Header 1</h1>
+<p class="p">nkdlsfkldsfjkdsjiocñmkldjs</p>
+<h1 class="header">Header 2</h1>
+<p class="p">sdmkflsdjfksdf</p>
+<h1 class="header">Header 3</h1>
+<p class="p">njfdsjfkdsjkfdsjklf</p>
+<br>
+<select id="font_size">
+    <option value="10">10px</option>
+    <option value="15">15px</option>
+    <option value="20">20px</option>
+</select>
+<button id=fontSize_btn>Change font size paragraph</button>
+</body>
+</html>
