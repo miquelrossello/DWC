@@ -9,11 +9,16 @@
     <title>Activitat </title>
     <script>
         $(document).ready(function () {
-
+            $(".btn").mousedown(function () {
+                $(this).css("background-color", "red");
+            }).mouseup(function () {
+                $(this).css("background-color", "grey")
+            });
         });
     </script>
 </head>
 <body>
-
+    <button class="btn">Button 1</button>
+    <button class="btn">Button 2</button>
 </body>
 </html>
