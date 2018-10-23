@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../lib/jquery-3.3.1.js"></script>
+    <title>Activitat 18</title>
+    <script>
+        $(document).ready(function () {
+            $("#add").click(function () {
+                addInputEnd();
+            });
+            $(".rv").click(function () {
+                console.log("Remove!");
+                $('.item').remove();
+            });
+        });
+
+        function removeItem(item) {
+            console.log(item);
+            item.parentNode().remove();
+        }
+
+        function addInputEnd() {
+            $(".list").append("<li class='item'><input type='text'><button class='rv'>Remove</button><br></li>");
+            console.log($('.rv'));
+        }
+    </script>
+</head>
+<body>
+    <h1>Press to create new inputs</h1>
+    <ul class="list">
+        <li class='item'><input type='text'><button class='rv'>Remove</button><br></li>
+    </ul>
+    <button id="add">Add input</button>
+</body>
+</html>
