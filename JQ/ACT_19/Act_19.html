@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../lib/jquery-3.3.1.js"></script>
+    <title>Activitat </title>
+    <script>
+        $(document).ready(function () {
+            $(".answer").hide();
+            $("div").click(function () {
+                $(".question").hide("slow", function () {
+                    $(".answer").show("slow");
+                });
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <p class="question">Hola</p>
+        <p class="question">Com estas</p>
+        <p class="question">Jo be</p>
+    </div>
+    <p class="answer">I tu?</p>
+</body>
+</html>
