@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../lib/jquery-3.3.1.js"></script>
+    <title>Activitat </title>
+    <script>
+        $(document).ready(function () {
+            var a = $("ul").children("li").children("a");
+            var a_length = a.length;
+            for (var i = 0; i < a_length; i++) {
+                var string = a[i].getAttribute("href");
+                var pos_subdomain_starts = (a[i].getAttribute("href").lastIndexOf(".") + 1);
+                var subdomain = string.substring(pos_subdomain_starts, string.length);
+                if (subdomain == "es") {
+                    $(a[i].parentNode).css("background-color", "red");
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li><a href="www.google.es">Google</a></li>
+    <li><a href="www.youtube.com">Youtube</a></li>
+    <li><a href="www.hola.es">Hola</a></li>
+    <li><a href="www.adeu.de">Adeu</a></li>
+</ul>
+</body>
+</html>
