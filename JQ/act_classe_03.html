@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="lib/jquery-3.3.1.js"></script>
+    <title>Activitat Classe 03</title>
+    <script>
+        $(document).ready(function () {
+            function addInput() {
+                console.log("Adding input!");
+                var on = $("#container");
+                var eContainerInputs = $("<div/>", {id: 'div_' + totalItems});
+                var parentId = "#div_" + totalItems;
+                var eInput = $("<input/>", {type: "text", id: "input_" + totalItems});
+                var eButtonRv = $("<button/>", {id: "btn_" + totalItems, text: "Remove", click: function () { eContainerInputs.remove(); }});
+                eContainerInputs.append(eInput);
+                eContainerInputs.append(eButtonRv);
+                on.append(eContainerInputs);
+                totalItems++;
+            }
+
+            function removeAll() {
+                var mainContainer = $("#container");
+                mainContainer.empty();
+            }
+
+            var totalItems = 0;
+
+
+            $("#add_input").click(function () {
+                addInput();
+            });
+
+            $("#remove_all").click(function () {
+                removeAll();
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <h4>Add and delete inputs</h4>
+    <div id="container">
+
+    </div>
+    <div id="buttons">
+        <button id="add_input">Add</button>
+        <button id="remove_all">Remove All</button>
+    </div>
+</body>
+</html>
