@@ -8,7 +8,7 @@
         ajax.onreadystatechange = function () {
             if (this.readyState == 4 && this.status2 == 200) {
                 var amarraments = JSON.parse(this.responseText);
-                console.log(amarraments);
+                document.write(amarraments[0]);
             }
         };
 
