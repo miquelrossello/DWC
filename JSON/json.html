@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status2 == 200) {
+                var amarraments = JSON.parse(this.responseText);
+                console.log(amarraments);
+            }
+        };
+
+        ajax.open("GET", "json_creator.php", true);
+        ajax.send();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
