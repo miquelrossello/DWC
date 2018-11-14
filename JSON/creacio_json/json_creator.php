@@ -1,7 +1,7 @@
 <?php
     header("Content-Type: application/json; charset=UTF-8");
 
-    $url = "mysql:host=10.100.65.34;dbname=json_act_1";
+    $url = "mysql:host=192.168.1.17;dbname=json_act_1";
     $user = "root";
     $pass = "mrm1998";
 
