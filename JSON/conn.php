@@ -1,6 +1,6 @@
 <?php
 
-$url = "mysql:host=10.100.65.34;dbname=nautic";
+$url = "mysql:host=192.168.1.17;dbname=nautic";
 $user = "root";
 $pass = "mrm1998";
 

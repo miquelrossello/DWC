@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Dinàmic</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Select dinamic</h1>
+    <form>
+        <label for="owners">Propietari</label>
+        <select class="custom-select" id="owners" name="owners">
+
+        </select>
+        <hr>
+        <label for="moorings">Amarrament</label>
+        <select class="custom-select disabled" id="moorings" name="moorings">
+
+        </select>
+        <hr>
+        <label for="rates">Tarifa</label>
+        <select class="custom-select disabled" id="rates" name="rates">
+
+        </select>
+    </form>
+
+</div>
+<script>
+
+    function loadOwners() {
+        let owners_element = $('#owners');
+        owners_element.empty();
+        owners_element.append($('<option>', {value: "0", text: "Choose an owner..."}));
+        fetch("getOwners_JSON.php")
+            .then( (res) => {
+                return res.json();
+            })
+            .then( (json) => {
+                for (let owners in json){
+                    let owner = json[owners];
+                    let dniOwner = owner.dni;
+                    let display = owner.nom + " " + owner.llinatge_1;
+                    let option = $('<option>', {value: dniOwner, text: display});
+                    owners_element.append(option);
+                }
+            });
+    }
+
+    function loadMoorings() {
+        async function getMoorings() {
+            let response = await fetch("getMoorings_JSON.php", init).then( res => res.json());
+            for (let index_amarrament in response) {
+                let amarrament = response[index_amarrament];
+                let idAmarrament = amarrament.id;
+                let numeroAmarrament = amarrament.numero;
+                let option = $('<option>', {value: idAmarrament, text: numeroAmarrament});
+                mooring_element.append(option);
+            }
+        }
+
+        let mooring_element = $("#moorings");
+        mooring_element.append($('<option>', {value: "0", text: "Choose a mooring..."}));
+        let dniOwner_selected = document.getElementById("owners").value;
+        let data = new FormData();
+        data.append('dniOwner', dniOwner_selected);
+        let init = {
+            method: 'POST',
+            body: data
+        };
+        getMoorings();
+    }
+
+    function loadRates() {
+        async function getRates() {
+            console.log("Getting Rates");
+            let response = await fetch("getRates_JSON.php", init).then( (res) => res.json() );
+            for (let index_rates in response) {
+                let rate = response[index_rates];
+                let idRate = rate.idTarifa;
+                let option = $('<option>', {value: idRate, text: idRate});
+                rates_element.append(option);
+            }
+        }
+
+        let rates_element = $('#rates');
+        rates_element.append($('<option>', {value: "0", text: "Choose a rate..."}));
+        let mooring_selected = $('#moorings').val();
+        let data = new FormData();
+        data.append('idMooring', mooring_selected);
+        let init = {
+            method: 'POST',
+            body: data
+        };
+        getRates();
+    }
+
+    loadOwners();
+    $('#owners').change( function () {
+        $('#moorings').empty();
+        $('#rates').empty();
+        loadMoorings();
+    });
+
+    $('#moorings').change(function () {
+        $('#rates').empty();
+        loadRates();
+    });
+</script>
+
+</body>
+</html>
