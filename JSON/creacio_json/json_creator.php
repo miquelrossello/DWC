@@ -1,9 +1,9 @@
 <?php
     header("Content-Type: application/json; charset=UTF-8");
 
-    $url = "mysql:host=192.168.1.17;dbname=json_act_1";
+    $url = "mysql:host=nautic;dbname=nautic";
     $user = "root";
-    $pass = "mrm1998";
+    $pass = "nautic";
 
     try {
         $db = new PDO($url, $user, $pass);
@@ -15,4 +15,4 @@
         die();
     }
 
-    echo json_encode($result);
+    print_r($result);

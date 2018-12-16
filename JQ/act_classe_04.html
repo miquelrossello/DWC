@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="lib/jquery-3.3.1.js"></script>
+    <title>Activitat Llibreria</title>
+    <script>
+
+
+        $(document).ready(function () {
+
+            function addBook(arrayBooks) {
+                //Create book
+                var id = $("#book_id").val();
+                var title = $("#book_title").val();
+                var num_pages = $("#book_pages").val();
+                var category = $("#list_category option:selected").val();
+                var row = $("#row_pos option:selected").val();
+                var col = $("#col_pos option:selected").val();
+                var book = new Book(id, title, num_pages, category, row, col);
+                arrayBooks[row][col] = book;
+                return arrayBooks;
+            }
+
+            function removeBook(book_id, row, col, arrayBooks) {
+                if (parseInt(arrayBooks[row][col].id) === book_id) {
+                    console.log("Removing ");
+                    arrayBooks[row][col] = undefined;
+                    return arrayBooks;
+                }
+            }
+
+            function printAllBooksDetailed(arrayBooks) {
+                var container = $("#container");
+                var rows = arrayBooks.length;
+                var cols = arrayBooks[0].length;
+                for (var r = 0; r < rows; r++) {
+                    for (var c = 0; c < cols; c++) {
+                        var book = arrayBooks[r][c];
+                        console.log(book);
+                        /*var book_container = $("<div></div>", {class: "book_container"});
+                        var title = $("<p>" + book.title + "</p>", {class: "book_title"});
+                        var num_pages = $("<p>" + book.num_pages + "</p>", {class: "book_pages"});
+                        var category = $("<p>" + book.category +"</p>", {class: "book_category"});
+                        var position = $("<p>Row: " + book.row + " | Col: " + book.col + "</p>", {class: "book_position"});
+                        book_container.append(title);
+                        book_container.append(num_pages);
+                        book_container.append(category);
+                        book_container.append(position);
+                        container.append(book_container);*/
+                    }
+                }
+            }
+
+            function printTable(arrayBooks) {
+                var rows = arrayBooks.length;
+                var cols = arrayBooks[0].length;
+                var container = $("#container");
+                var table = $("<table/>");
+                for (var r = 0; r < rows; r++) {
+                    var table_row = $("<tr/>", {id: "tr_" + r});
+                    for (var c = 0; c < cols; c++) {
+                        //Must show a image.
+                        if (arrayBooks[r][c] != undefined) {
+                            var table_col = $(`<td>${arrayBooks[r][c].title}</td>` + "</td>", {id: "td_" + c});
+                        } else {
+                            var table_col = $(`<td>Empty</td>` + "</td>", {id: "td_" + c});
+                        }
+                        table_row.append(table_col);
+                    }
+                    table.append(table_row);
+                }
+                container.append(table);
+            }
+
+            var arrayBooks = new Array(4);
+            for (let i = 0; i < arrayBooks.length; i++) {
+                arrayBooks[i] = new Array(4);
+            }
+
+            $("#add_book").click(function () {
+                arrayBooks = addBook(arrayBooks);
+                if ($("#container").children("table")) {
+                    $("#container").empty();
+                    printTable(arrayBooks);
+                }
+            });
+
+            $("#show_all_detailed_books").click(function () {
+                printAllBooksDetailed(arrayBooks);
+            });
+            
+            $("#remove_book").click(function () {
+                var bookToRemove = $("#book_id").val();
+                var col = $("#col_pos :selected").val();
+                var row = $("#row_pos :selected").val();
+                removeBook(bookToRemove, row, col, arrayBooks);
+            });
+
+            $("#show_table").click(function () {
+                $("#container").empty();
+                printTable(arrayBooks);
+            });
+
+        });
+
+        class Book {
+            constructor(id, title, num_pages, category, row, col) {
+                this.id = id;
+                this.title = title;
+                this.num_pages = num_pages;
+                this.category = category;
+                this.row = row;
+                this.col = col;
+            }
+        }
+    </script>
+    <style>
+        table * {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        ID:
+        <input type="number" id="book_id">
+    </div>
+    <br>
+    <div>
+        Book Title:
+        <input type="text" id="book_title">
+    </div>
+    <br>
+    <div>
+        Num. Pages:
+        <input type="number" id="book_pages">
+    </div>
+    <br>
+    <div>
+        Category:
+        <select id="list_category">
+            <!-- <option class="item_category"></option>-->
+            <option value="classic">Classic</option>
+            <option value="science_fiction">Science Fiction</option>
+            <option value="sports">Sports</option>
+            <option value="comedy">Comdey</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        Position:
+        <select id="row_pos">
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+            <option value="3">4</option>
+        </select>
+        <select id="col_pos">
+            <option value="0">1</option>
+            <option value="1">2</option>
+            <option value="2">3</option>
+            <option value="3">4</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <button id="add_book">Add</button>
+        <button id="remove_book">Remove</button>
+        <button id="show_table">Show table</button>
+        <button id="show_all_detailed_books">Show All Books Detailed</button>
+    </div>
+    <hr>
+    <div id="container">
+
+    </div>
+</div>
+</body>
+</html>
